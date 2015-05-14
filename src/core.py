@@ -174,7 +174,9 @@ def profile_os():
     if os.path.isfile("/etc/apt/sources.list"):
         return "DEBIAN"
 
-    # will add support for more operating systems later
+    # IF running a redhat variant
+    if os.path.isfile("/etc/redhat-release"):
+        return "REDHAT"
 
     # else use custom
     else:
